@@ -10,7 +10,7 @@ Criar uma pasta no computador para ser o repositório local.
 
 Abrir a pasta criada em uma **IDE (Integrated Development Environment)** de preferência.
 
-No terminal da IDE, clonar o repositório com `git clone https://github.com/Z4ffarani/PORTAL-FILMES.git`.
+No terminal da IDE, clonar o repositório: ```git clone https://github.com/Z4ffarani/PORTAL-FILMES.git```
 
 No terminal da IDE, navegar até a pasta do projeto com `cd PORTAL-FILMES/portal-filmes`.
 
