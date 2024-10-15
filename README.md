@@ -37,6 +37,8 @@ Acessar o site no endereço http://localhost:5173.
 
 # OBSERVAÇÕES
 - É necessária a instalação do **Node.js** para que o programa seja rodado.
+  
+- O site é totalmente responsivo, adaptando-se a diversas telas de dispositivos.
 
 - Não é possível realizar login ou cadastro pessoal na plataforma.
 
