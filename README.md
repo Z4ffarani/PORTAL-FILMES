@@ -1,7 +1,7 @@
 ![banner](./assets/banner.png)
 
 # PROJETO
-Portal Filmes é uma plataforma fictícia que permite aos usuários explorarem filmes internacionais ou séries de televisão populares, filtrarem gêneros de filmes e organizarem seus conteúdos "para ver depois". Ele utiliza a **API (Application Programming Interface)** do **The Movie Database (TMDb)** para obter informações atualizadas sobre filmes e séries.
+PORTAL FILMES é uma plataforma fictícia que permite aos usuários explorarem filmes internacionais ou séries de televisão populares, filtrarem gêneros de filmes e organizarem seus conteúdos "para ver depois". Ele utiliza a **API (Application Programming Interface)** do **The Movie Database (TMDb)** para obter informações atualizadas sobre filmes e séries.
 
 <br>    
 
@@ -10,9 +10,9 @@ Criar uma pasta no computador para ser o repositório local.
 
 Abrir a pasta criada em uma **IDE (Integrated Development Environment)** de preferência.
 
-No terminal da IDE, clonar o repositório com `git clone https://github.com/Z4ffarani/Portal-Filmes.git`.
+No terminal da IDE, clonar o repositório com `git clone https://github.com/Z4ffarani/PORTAL-FILMES.git`.
 
-No terminal da IDE, navegar até a pasta do projeto com `cd Portal-Filmes/portal-filmes`.
+No terminal da IDE, navegar até a pasta do projeto com `cd PORTAL-FILMES/portal-filmes`.
 
 No terminal da IDE, instalar o pacote de módulos do Node.js com `npm install`, ou apenas `npm i`.
 
