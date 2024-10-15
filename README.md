@@ -6,17 +6,17 @@
 <br>    
 
 # INSTRUÇÕES
-1. No terminal da IDE, clonar o repositório:
+1. Em um terminal, clonar o repositório:
 ```bash
 git clone https://github.com/Z4ffarani/PORTAL-FILMES.git
 ```
 
-2. No terminal da IDE, navegar até a pasta do projeto:
+2. No terminal, navegar até a pasta do projeto:
 ```bash
 cd PORTAL-FILMES/portal-filmes
 ```
 
-3. No terminal da IDE, instalar o pacote de módulos do Node.js:
+3. No terminal, instalar o pacote de módulos do Node.js:
 ```bash
 npm install
 ```
