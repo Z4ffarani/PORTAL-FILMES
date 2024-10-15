@@ -44,7 +44,7 @@ Acessar o site no endereço http://localhost:5173.
 
 - O catálogo de filmes e séries tende a mudar, pois o banco de dados da TMDb se atualiza periodicamente.
 
-- A seção de filmes recomendados da página `Home` filtra-os por gênero mais predominante entre os marcados como assistidos pelo usuário na página `Collection`, sendo os resultados da seção estatisticamente favoráveis.
+- A seção de recomendados da página `Home`, válida para somente filmes, filtra-os por gênero mais predominante entre os marcados como assistidos pelo usuário na página `Collection`, sendo os resultados da seção estatisticamente favoráveis.
 
 - O projeto utiliza `localStorage` para armazenar dados temporariamente. Isso significa que os dados são mantidos apenas enquanto o servidor local estiver funcionando, sendo perdidos ao encerrá-lo. Para um sistema mais robusto de login, recomenda-se o uso de um banco de dados e autenticação segura.
 
