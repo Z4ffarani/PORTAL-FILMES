@@ -73,7 +73,7 @@ export default function MoviePopup() {
                 {movieDetails.actors && (
                     <div className="pb-4 flex flex-wrap justify-center items-center">
                         {movieDetails.actors.map(actor => (
-                            <p key={actor.id} className='text-[15px] opacity-50'> •ㅤ{actor.name}</p>
+                            <p key={actor.id} className='text-[15px] opacity-50'>ㅤ•ㅤ{actor.name}</p>
                         ))}
                     </div>
                 )}
