@@ -8,7 +8,7 @@ export default function GenreMovies() {
     useEffect(() => {
         fetch(`https://api.themoviedb.org/3/discover/movie?api_key=7c572a9f5b3ba776080330d23bb76e1e&language=pt-BR&with_genres=${genreId}`)
             .then(res => res.json())
-            .then(data => setMovies(data.results))
+            .then(res => setMovies(res.results))
             .catch(erro => console.log(erro));
     }, [genreId]); 
 

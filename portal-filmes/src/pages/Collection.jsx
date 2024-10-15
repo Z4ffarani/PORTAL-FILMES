@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 
-export default function ColecaoPage() {
+export default function Collection() {
     const [filmesPopulares, setFilmesPopulares] = useState([]);
     const [seriesPopulares, setSeriesPopulares] = useState([]);
-    const [filmesAssistidos, setFilmesAssistidos] = useState([]);
-    const [seriesAssistidas, setSeriesAssistidas] = useState([]);
-    const [filmesParaVer, setFilmesParaVer] = useState([]);
-    const [seriesParaVer, setSeriesParaVer] = useState([]);
+
+    const [conteudoParaVer, setConteudoParaVer] = useState([]);
+    const [conteudoAssistido, setConteudoAssistido] = useState([]);
+
     const [searchTerm, setSearchTerm] = useState("");
+
     const [slidePopulares, setSlidePopulares] = useState(0);
     const [slideSeries, setSlideSeries] = useState(0);
 
@@ -26,59 +27,48 @@ export default function ColecaoPage() {
             .then(res => setSeriesPopulares(res.results))
             .catch(erro => console.log(erro));
 
-        setFilmesAssistidos(JSON.parse(localStorage.getItem("filmesAssistidos")) || []);
-        setSeriesAssistidas(JSON.parse(localStorage.getItem("seriesAssistidas")) || []);
-        setFilmesParaVer(JSON.parse(localStorage.getItem("filmesParaVer")) || []);
-        setSeriesParaVer(JSON.parse(localStorage.getItem("seriesParaVer")) || []);
+        setConteudoParaVer(JSON.parse(localStorage.getItem("conteudoParaVer")) || []);
+        setConteudoAssistido(JSON.parse(localStorage.getItem("conteudoAssistido")) || []);
     }, []);
 
     const addMovieToList = (item, listName) => {
-        const isAssisted = listName === 'assistidos';
-        const list = isAssisted ? (item.media_type === "movie" ? filmesAssistidos : seriesAssistidas) :
-            (item.media_type === "movie" ? filmesParaVer : seriesParaVer);
+        const isAssisted = listName === 'assistido';
+        const list = isAssisted ? conteudoAssistido : conteudoParaVer;
 
         const isDuplicate = list.some(existingItem => existingItem.id === item.id);
 
         if (!isDuplicate) {
             const updatedList = [...list, item];
-            localStorage.setItem(isAssisted ? (item.media_type === "movie" ? "filmesAssistidos" : "seriesAssistidas") :
-                (item.media_type === "movie" ? "filmesParaVer" : "seriesParaVer"),
-                JSON.stringify(updatedList));
+            localStorage.setItem(isAssisted ? "conteudoAssistido" : "conteudoParaVer", JSON.stringify(updatedList));
 
             if (isAssisted) {
-                item.media_type === "movie" ? setFilmesAssistidos(updatedList) : setSeriesAssistidas(updatedList);
+                setConteudoAssistido(updatedList);
             } else {
-                item.media_type === "movie" ? setFilmesParaVer(updatedList) : setSeriesParaVer(updatedList);
+                setConteudoParaVer(updatedList);
             }
 
             if (isAssisted) {
-                const paraVerList = item.media_type === "movie" ? filmesParaVer : seriesParaVer;
-                const updatedParaVerList = paraVerList.filter(existingItem => existingItem.id !== item.id);
-                localStorage.setItem(item.media_type === "movie" ? "filmesParaVer" : "seriesParaVer",
-                    JSON.stringify(updatedParaVerList));
-                item.media_type === "movie" ? setFilmesParaVer(updatedParaVerList) : setSeriesParaVer(updatedParaVerList);
+                const updatedParaVerList = conteudoParaVer.filter(existingItem => existingItem.id !== item.id);
+                localStorage.setItem("conteudoParaVer", JSON.stringify(updatedParaVerList));
+                setConteudoParaVer(updatedParaVerList);
             }
         }
     };
 
     const removeMovieFromList = (item) => {
-        const updatedList = (item.media_type === "movie" ? filmesAssistidos : seriesAssistidas)
-            .filter(movie => movie.id !== item.id);
-
-        localStorage.setItem(item.media_type === "movie" ? "filmesAssistidos" : "seriesAssistidas", 
-            JSON.stringify(updatedList));
-
-        item.media_type === "movie" ? setFilmesAssistidos(updatedList) : setSeriesAssistidas(updatedList);
+        const updatedList = conteudoAssistido.filter(movie => movie.id !== item.id);
+        localStorage.setItem("conteudoAssistido", JSON.stringify(updatedList));
+        setConteudoAssistido(updatedList);
     };
 
     const handleSearch = (event) => {
         setSearchTerm(event.target.value);
     };
 
-    const filteredAssistidos = [...filmesAssistidos, ...seriesAssistidas].filter(item => (item.title || item.name) && (item.title || item.name).toLowerCase().includes(searchTerm.toLowerCase()));
-    const filteredParaVer = [...filmesParaVer, ...seriesParaVer].filter(item => (item.title || item.name) && (item.title || item.name).toLowerCase().includes(searchTerm.toLowerCase()));
-    const filteredSeries = seriesPopulares.filter(series => series.name && series.name.toLowerCase().includes(searchTerm.toLowerCase()));
+    const filteredParaVer = conteudoParaVer.filter(item => (item.title || item.name) && (item.title || item.name).toLowerCase().includes(searchTerm.toLowerCase()));
+    const filteredAssistidos = conteudoAssistido.filter(item => (item.title || item.name) && (item.title || item.name).toLowerCase().includes(searchTerm.toLowerCase()));
     const filteredFilmesPopulares = filmesPopulares.filter(movie => movie.title && movie.title.toLowerCase().includes(searchTerm.toLowerCase()));
+    const filteredSeries = seriesPopulares.filter(series => series.name && series.name.toLowerCase().includes(searchTerm.toLowerCase()));
 
     const handlePreviousSlide = (slide, setSlide) => {
         setSlide(Math.max(slide - cardWidth * maxVisibleCards, 0));
@@ -101,7 +91,7 @@ export default function ColecaoPage() {
                 />
             </div>
 
-            <div className="pl-[24px]">
+            <div className="pl-[24px] mb-10">
                 <div className="flex flex-col gap-8">
                     <section>
                         <h2 className="text-xl mb-3">Populares</h2>
@@ -112,7 +102,7 @@ export default function ColecaoPage() {
                                     <div key={movie.id} className="w-[180px] flex flex-col mr-2 items-center">
                                         <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} className="w-full h-[270px] object-cover rounded-md mb-2 transition-all border-2 border-transparent" />
                                         <button onClick={() => addMovieToList(movie, 'paraVer')} className="text-md hover:bg-red-600 border-[1px] border-red-600 text-white p-2 rounded w-[98%] mb-2 transition duration-200 ease active:scale-95">Para Ver</button>
-                                        <button onClick={() => addMovieToList(movie, 'assistidos')} className="text-md hover:bg-green-600 border-[1px] border-green-600 text-white p-1 rounded w-[98%] transition duration-200 ease active:scale-95">Assistido</button>
+                                        <button onClick={() => addMovieToList(movie, 'assistido')} className="text-md hover:bg-green-600 border-[1px] border-green-600 text-white p-1 rounded w-[98%] transition duration-200 ease active:scale-95">Assistido</button>
                                     </div>
                                 ))}
                             </div>
@@ -131,7 +121,7 @@ export default function ColecaoPage() {
                                     <div key={series.id} className="w-[180px] flex flex-col mr-2 items-center">
                                         <img src={`https://image.tmdb.org/t/p/w500${series.poster_path}`} alt={series.title} className="w-full h-[270px] object-cover rounded-md mb-2 transition-all border-2 border-transparent" />
                                         <button onClick={() => addMovieToList(series, 'paraVer')} className="text-md hover:bg-red-600 border-[1px] border-red-600 text-white p-2 rounded w-[98%] mb-2 transition duration-200 ease active:scale-95">Para Ver</button>
-                                        <button onClick={() => addMovieToList(series, 'assistidos')} className="text-md hover:bg-green-600 border-[1px] border-green-600 text-white p-1 rounded w-[98%] transition duration-200 ease active:scale-95">Assistido</button>
+                                        <button onClick={() => addMovieToList(series, 'assistido')} className="text-md hover:bg-green-600 border-[1px] border-green-600 text-white p-1 rounded w-[98%] transition duration-200 ease active:scale-95">Assistido</button>
                                     </div>
                                 ))}
                             </div>

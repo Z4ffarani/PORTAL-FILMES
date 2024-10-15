@@ -7,12 +7,12 @@ export default function Genres() {
     useEffect(() => {
         fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=7c572a9f5b3ba776080330d23bb76e1e&language=pt-BR')
             .then(res => res.json())
-            .then(data => setGenres(data.genres))
+            .then(res => setGenres(res.genres))
             .catch(erro => console.log(erro));
     }, []);
 
     return (
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 mb-10 h-full">
             <div className="flex flex-wrap gap-2 justify-center items-center px-4">
                 {genres.map(genre => (
                     <Link 

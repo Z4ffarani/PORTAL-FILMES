@@ -14,8 +14,18 @@ export default function MoviePopup() {
     useEffect(() => {
         fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=7c572a9f5b3ba776080330d23bb76e1e&language=pt-BR`)
             .then(res => res.json())
-            .then(data => setMovieDetails(data));
-
+            .then(data => {
+                setMovieDetails(data);
+                return fetch(`https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=7c572a9f5b3ba776080330d23bb76e1e&language=pt-BR`);
+            })
+            .then(res => res.json())
+            .then(creditsData => {
+                setMovieDetails(prevDetails => ({
+                    ...prevDetails,
+                    actors: creditsData.cast
+                }));
+            });
+    
         fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=7c572a9f5b3ba776080330d23bb76e1e&language=pt-BR`)
             .then(res => res.json())
             .then(data => {
@@ -23,13 +33,13 @@ export default function MoviePopup() {
                 setTrailer(officialTrailer);
             });
     }, [movieId]);
-
+    
     if (!movieDetails) return null;
 
     return (
         <div className="flex inset-0 bg-[#0a0a0a] bg-opacity-80 justify-center z-50">
             <div className="rounded-lg max-w-2xl w-full relative scale-[95%] p-8 text-justify">
-                <button onClick={handleClose} className="absolute top-0 right-2 text-red-600 text-[30px] transition duration-100 font-bold hover:scale-[110%]">&times;</button>
+                <button onClick={handleClose} className="absolute top-0 right-2 text-red-600 text-[30px] transition duration-100 font-bold hover:scale-[120%]">&times;</button>
                 
                 <div className="relative">
                     <img src={`https://image.tmdb.org/t/p/w500${movieDetails.backdrop_path}`} alt={movieDetails.title} className="w-full rounded-xl" />
@@ -44,7 +54,7 @@ export default function MoviePopup() {
                 <p className='py-3'>{movieDetails.overview}</p>
 
                 {trailer && (
-                    <div className="mt-4">
+                    <div className="my-4">
                         <iframe
                             width="100%"
                             height="315"
@@ -55,6 +65,16 @@ export default function MoviePopup() {
                             allowFullScreen
                             className='rounded-xl'
                         ></iframe>
+                    </div>
+                )}
+
+                <p className='text-[20px] text-center pt-3'><strong>Elenco:</strong></p>
+
+                {movieDetails.actors && (
+                    <div className="pb-4 flex flex-wrap justify-center items-center">
+                        {movieDetails.actors.map(actor => (
+                            <p key={actor.id} className='text-[15px] opacity-50'> •ㅤ{actor.name}</p>
+                        ))}
                     </div>
                 )}
             </div>
