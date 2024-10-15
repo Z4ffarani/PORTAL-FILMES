@@ -27,9 +27,7 @@ npm run dev
 ```
 
 5. Acessar o site no endereço:
-```bash
-http://localhost:5173
-```
+[http://localhost:5173](http://localhost:5173)
 
 <br>
 
