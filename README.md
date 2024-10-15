@@ -6,19 +6,31 @@
 <br>    
 
 # INSTRUÇÕES
-Criar uma pasta no computador para ser o repositório local.
+1. Criar uma pasta no computador para ser o repositório local.
 
-Abrir a pasta criada em uma **IDE (Integrated Development Environment)** de preferência.
+2. Abrir a pasta criada em uma **IDE (Integrated Development Environment)** de preferência.
 
-No terminal da IDE, clonar o repositório: ```git clone https://github.com/Z4ffarani/PORTAL-FILMES.git```
+3. No terminal da IDE, clonar o repositório:
+```bash
+git clone https://github.com/Z4ffarani/PORTAL-FILMES.git
+```
 
-No terminal da IDE, navegar até a pasta do projeto com `cd PORTAL-FILMES/portal-filmes`.
+4. No terminal da IDE, navegar até a pasta do projeto:
+```bash
+cd PORTAL-FILMES/portal-filmes
+```
 
-No terminal da IDE, instalar o pacote de módulos do Node.js com `npm install`, ou apenas `npm i`.
+5. No terminal da IDE, instalar o pacote de módulos do Node.js:
+```bash
+npm install
+```
 
-Iniciar o servidor de desenvolvimento com `npm run dev`.
+6. Iniciar o servidor de desenvolvimento:
+```bash
+npm run dev
+```
 
-Acessar o site no endereço http://localhost:5173.
+7. Acessar o site no endereço http://localhost:5173.
 
 <br>
 
