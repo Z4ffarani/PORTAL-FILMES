@@ -6,7 +6,7 @@
 <br>    
 
 # INSTRUÇÕES
-**1.** Em um terminal, clonar o repositório:
+1. Em um terminal, clonar o repositório:
 ```bash
 git clone https://github.com/Z4ffarani/PORTAL-FILMES.git
 ```
