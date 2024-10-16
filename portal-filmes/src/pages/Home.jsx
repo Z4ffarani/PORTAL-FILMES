@@ -84,7 +84,7 @@ export default function Home() {
             <div className="flex flex-col items-center gap-8 mb-10">
                 <CardContainer titulo="Populares">
                     <div className="relative flex items-center w-screen">
-                        <button onClick={() => handlePreviousSlide(setSlidePopulares, slidePopulares)} className="absolute z-10 left-4 bg-red-600 text-white p-2 rounded active:scale-95">◄</button>
+                        <button onClick={() => handlePreviousSlide(setSlidePopulares, slidePopulares)} className="absolute z-10 left-4 bg-red-600 text-white p-2 rounded scale-[125%] active:scale-[120%]">◄</button>
                         <div className="overflow-x-hidden">
                             <div className="flex transition-transform duration-300 ease" style={{ transform: `translateX(-${slidePopulares}px)` }}>
                                 {filmesPopulares.map(filme => (
@@ -98,7 +98,7 @@ export default function Home() {
                                 ))}
                             </div>
                         </div>
-                        <button onClick={() => handleNextSlide(setSlidePopulares, slidePopulares, filmesPopulares)} className="absolute right-16 bg-red-600 text-white p-2 rounded active:scale-95">►</button>
+                        <button onClick={() => handleNextSlide(setSlidePopulares, slidePopulares, filmesPopulares)} className="absolute right-16 bg-red-600 text-white p-2 rounded scale-[125%] active:scale-[120%]">►</button>
                     </div>
                 </CardContainer>
 
@@ -106,7 +106,7 @@ export default function Home() {
 
                 <CardContainer titulo="Em breve">
                     <div className="relative flex items-center w-screen">
-                        <button onClick={() => handlePreviousSlide(setSlidePorVir, slidePorVir)} className="absolute z-10 left-4 bg-red-600 text-white p-2 rounded active:scale-95">◄</button>
+                        <button onClick={() => handlePreviousSlide(setSlidePorVir, slidePorVir)} className="absolute z-10 left-4 bg-red-600 text-white p-2 rounded scale-[125%] active:scale-[120%]">◄</button>
                         <div className="overflow-x-hidden flex">
                             <div className="flex transition-transform duration-300 ease-in-out" style={{ transform: `translateX(-${slidePorVir}px)` }}>
                                 {filmesPorVir.map(filme => (
@@ -120,7 +120,7 @@ export default function Home() {
                                 ))}
                             </div>
                         </div>
-                        <button onClick={() => handleNextSlide(setSlidePorVir, slidePorVir, filmesPorVir)} className="absolute right-16 bg-red-600 text-white p-2 rounded active:scale-95">►</button>
+                        <button onClick={() => handleNextSlide(setSlidePorVir, slidePorVir, filmesPorVir)} className="absolute right-16 bg-red-600 text-white p-2 rounded scale-[125%] active:scale-[120%]">►</button>
                     </div>
                 </CardContainer>
 
@@ -128,7 +128,7 @@ export default function Home() {
 
                 <CardContainer titulo="Séries de TV">
                     <div className="relative flex items-center w-screen">
-                        <button onClick={() => handlePreviousSlide(setSlideSeries, slideSeries)} className="absolute z-10 left-4 bg-red-600 text-white p-2 rounded active:scale-95">◄</button>
+                        <button onClick={() => handlePreviousSlide(setSlideSeries, slideSeries)} className="absolute z-10 left-4 bg-red-600 text-white p-2 rounded scale-[125%] active:scale-[120%]">◄</button>
                         <div className="overflow-x-hidden flex">
                             <div className="flex transition-transform duration-300 ease-in-out" style={{ transform: `translateX(-${slideSeries}px)` }}>
                                 {seriesPopulares.map(serie => (
@@ -142,7 +142,7 @@ export default function Home() {
                                 ))}
                             </div>
                         </div>
-                        <button onClick={() => handleNextSlide(setSlideSeries, slideSeries, seriesPopulares)} className="absolute right-16 bg-red-600 text-white p-2 rounded active:scale-95">►</button>
+                        <button onClick={() => handleNextSlide(setSlideSeries, slideSeries, seriesPopulares)} className="absolute right-16 bg-red-600 text-white p-2 rounded scale-[125%] active:scale-[120%]">►</button>
                     </div>
                 </CardContainer>
 
@@ -150,7 +150,7 @@ export default function Home() {
 
                 <CardContainer titulo="Recomendados">
                     <div className="relative flex items-center w-screen">
-                        <button onClick={() => handlePreviousSlide(setSlideRecomendados, slideRecomendados)} className={`${arrows} absolute z-10 left-4 bg-red-600 text-white p-2 rounded active:scale-95`}>◄</button>
+                        <button onClick={() => handlePreviousSlide(setSlideRecomendados, slideRecomendados)} className={`${arrows} absolute z-10 left-4 bg-red-600 text-white p-2 rounded scale-[125%] active:scale-[120%]`}>◄</button>
                         <div className="overflow-x-hidden flex">
                             <div className="flex transition-transform duration-300 ease-in-out" style={{ transform: `translateX(-${slideRecomendados}px)` }}>
                                 {filmesRecomendados.map(filme => (
@@ -164,7 +164,7 @@ export default function Home() {
                                 ))}
                             </div>
                         </div>
-                        <button onClick={() => handleNextSlide(setSlideRecomendados, slideRecomendados, filmesRecomendados)} className={`${arrows} absolute right-16 bg-red-600 text-white p-2 rounded active:scale-95`}>►</button>
+                        <button onClick={() => handleNextSlide(setSlideRecomendados, slideRecomendados, filmesRecomendados)} className={`${arrows} absolute right-16 bg-red-600 text-white p-2 rounded scale-[125%] active:scale-[120%]`}>►</button>
                     </div>
                 </CardContainer>
 

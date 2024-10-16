@@ -96,7 +96,7 @@ export default function Collection() {
                     <section>
                         <h2 className="text-xl mb-3">Populares</h2>
                         <div className="relative flex items-center overflow-x-hidden">
-                            <button onClick={() => handlePreviousSlide(slidePopulares, setSlidePopulares)} className="absolute mb-16 left-4 z-10 bg-red-600 text-white p-2 rounded transition-transform duration-300 ease-in-out transform hover:scale-110 active:scale-95">◄</button>
+                            <button onClick={() => handlePreviousSlide(slidePopulares, setSlidePopulares)} className="absolute mb-16 left-4 z-10 bg-red-600 text-white p-2 rounded transition-transform duration-300 ease-in-out transform scale-[125%] active:scale-[120%]">◄</button>
                             <div className="flex transition-transform duration-300 ease-in-out" style={{ transform: `translateX(-${slidePopulares}px)` }}>
                                 {filteredFilmesPopulares.map(movie => (
                                     <div key={movie.id} className="w-[180px] flex flex-col mr-2 items-center">
@@ -106,7 +106,7 @@ export default function Collection() {
                                     </div>
                                 ))}
                             </div>
-                            <button onClick={() => handleNextSlide(slidePopulares, setSlidePopulares, filmesPopulares)} className="absolute mb-16 right-4 z-10 bg-red-600 text-white p-2 rounded transition-transform duration-300 ease-in-out transform hover:scale-110 active:scale-95">►</button>
+                            <button onClick={() => handleNextSlide(slidePopulares, setSlidePopulares, filmesPopulares)} className="absolute mb-16 right-7 z-10 bg-red-600 text-white p-2 rounded transition-transform duration-300 ease-in-out transform scale-[125%] active:scale-[120%]">►</button>
                         </div>
                     </section>
 
@@ -115,7 +115,7 @@ export default function Collection() {
                     <section>
                         <h2 className="text-xl mb-3">Séries de TV</h2>
                         <div className="relative flex items-center overflow-x-hidden">
-                            <button onClick={() => handlePreviousSlide(slideSeries, setSlideSeries)} className="absolute mb-16 left-4 z-10 bg-red-600 text-white p-2 rounded transition-transform duration-300 ease-in-out transform hover:scale-110 active:scale-95">◄</button>
+                            <button onClick={() => handlePreviousSlide(slideSeries, setSlideSeries)} className="absolute mb-16 left-4 z-10 bg-red-600 text-white p-2 rounded transition-transform duration-300 ease-in-out transform scale-[125%] active:scale-[120%]">◄</button>
                             <div className="flex transition-transform duration-300 ease-in-out" style={{ transform: `translateX(-${slideSeries}px)` }}>
                                 {filteredSeries.map(series => (
                                     <div key={series.id} className="w-[180px] flex flex-col mr-2 items-center">
@@ -125,7 +125,7 @@ export default function Collection() {
                                     </div>
                                 ))}
                             </div>
-                            <button onClick={() => handleNextSlide(slideSeries, setSlideSeries, seriesPopulares)} className="absolute mb-16 right-4 z-10 bg-red-600 text-white p-2 rounded transition-transform duration-300 ease-in-out transform hover:scale-110 active:scale-95">►</button>
+                            <button onClick={() => handleNextSlide(slideSeries, setSlideSeries, seriesPopulares)} className="absolute mb-16 right-7 z-10 bg-red-600 text-white p-2 rounded transition-transform duration-300 ease-in-out transform scale-[125%] active:scale-[120%]">►</button>
                         </div>
                     </section>
 
