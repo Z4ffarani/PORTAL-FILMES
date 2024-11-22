@@ -1,7 +1,7 @@
 ![banner](./assets/banner.png)
 
 # PROJETO
-**PORTAL FILMES** é uma plataforma fictícia que permite aos usuários explorarem filmes internacionais ou séries de televisão populares, filtrarem gêneros de filmes e organizarem seus conteúdos "para ver depois". Ele utiliza a **API (interface de programação de aplicações)** do site **The Movie Database (TMDb)** para obter informações atualizadas sobre filmes e séries.
+PORTAL FILMES é uma plataforma fictícia que permite aos usuários explorarem filmes internacionais ou séries de televisão populares, filtrarem gêneros de filmes e organizarem seus conteúdos "para ver depois". Ele utiliza a API (interface de programação de aplicações) do site The Movie Database (TMDb) para obter informações atualizadas sobre filmes e séries.
 
 <br>    
 
@@ -37,14 +37,14 @@ npm run dev
 
 - **Busca avançada** | O usuário pode buscar por filmes e séries usando um campo de busca na página `Collection`.
   
-- **Gêneros de filmes** | O programa permite que os usuários explorem filmes por gênero utilizando a navegação baseada em **URL (localizador uniforme de recursos)** com `useParams`.
+- **Gêneros de filmes** | O programa permite que os usuários explorem filmes por gênero utilizando a navegação baseada em URL (localizador uniforme de recursos) com `useParams`.
 
 - **Armazenamento local** | Os usuários podem adicionar filmes e séries às listas `conteudoParaVer` ou `conteudoAssistido`, utilizando o `localStorage` para persistência de dados.
 
 <br>
 
 # OBSERVAÇÕES
-- É necessária a instalação do **Node.js** para que o programa seja rodado.
+- É necessária a instalação do Node.js para que o programa seja rodado.
   
 - O site é totalmente responsivo, adaptando-se a diversas telas de dispositivos.
 
