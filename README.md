@@ -1,7 +1,7 @@
 ![banner](./assets/banner.png)
 
 # PROJETO
-PORTAL FILMES é uma plataforma fictícia que permite aos usuários explorarem filmes internacionais ou séries de televisão populares, filtrarem gêneros de filmes e organizarem seus conteúdos "para ver depois". Ele utiliza a API (interface de programação de aplicações) do site The Movie Database (TMDb) para obter informações atualizadas sobre filmes e séries.
+PORTAL FILMES é uma plataforma fictícia que permite aos usuários explorarem filmes internacionais ou séries de televisão populares, filtrarem gêneros de filmes e organizarem seus conteúdos "para ver depois". Ele utiliza a API (interface de programação de aplicações) para acesso ao banco de dados do site The Movie Database (TMDb) para obter informações atualizadas sobre filmes e séries.
 
 <br>    
 
